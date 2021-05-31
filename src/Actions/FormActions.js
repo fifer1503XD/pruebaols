@@ -47,7 +47,7 @@ export const useForm = (  ) => {
             ...newUser, 
             [ target.name ]: target.value
         });
-        
+        console.log(newUser)
     }
     
 
@@ -66,15 +66,12 @@ export const useForm = (  ) => {
         .get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 docs.push({ ...doc.data(), id: doc.id });
+                console.log(doc.data())
             });
-           
-           
-            
         })
         .catch((error) => {
             console.log("Error getting documents: ", error);
         });
-        
         if( newUser.correo && docs[0]){
             if (newUser.correo === docs[0].correo && newUser.password ===docs[0].password){
                 setcurrentUser(docs)
@@ -87,6 +84,10 @@ export const useForm = (  ) => {
             }
          
         } 
+        else{
+            ( alert('credenciales incorrectas'))
+            setcurrentUser('')
+        }
   
      }
     return [handleInputChange,HandleSubmit,dataSearch,HandleReset,handleInputChangePost,newUser,PostNewUser,EditUser,loginUser];

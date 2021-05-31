@@ -11,12 +11,18 @@ const ModalEditUser = (props) => {
 
     const {userId} =props
     const [show, setShow] = useState(false);
-    const handleClose = () => {setShow(false)}
+    const handleClose = () => {
+      setShow(false)
+      setcurrentUser("")
+    }
     const { setcurrentUser} = useContext(UserContext);
+
     const editUser = async (id) => {
+      console.log('ingresa')
       const doc = await db.collection("users").doc(id).get();
       setcurrentUser({ ...doc.data() });
       setShow(true)
+      console.log(doc.data)
     }
     return ( 
         <>
