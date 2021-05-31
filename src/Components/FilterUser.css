@@ -6,6 +6,7 @@
    
 }
 .filter{
+    width: 14vw;
     height: 80vh;
     box-sizing: content-box;
 }
