@@ -1,31 +1,35 @@
-.btnNewUser{
-    width: 100%;
-    display: flex;
+.btnNewUser {
+    width          : 100%;
+    display        : flex;
     justify-content: center;
-    
-}
-.btnAceptar{
-   margin: 2%;
-}
-.formPostUser{
-    display: flex;
-    flex-wrap: wrap;  
+
 }
 
-.modalEdit{
+.btnAceptar {
+    margin: 2%;
+}
+
+.formPostUser {
+    display  : flex;
+    flex-wrap: wrap;
+}
+
+.modalEdit {
     width: 100%;
 }
-modal-dialog{
+
+modal-dialog {
     width: 55vw;
 }
 
-.inputForm2{
-    height: 12vh;
-    width: 45%;
+.inputForm2 {
+    height     : 12vh;
+    width      : 45%;
     margin-left: 3%;
 }
-.iconModalEdit{
-    color: blue;
-    font-size: 1.8rem;
+
+.iconModalEdit {
+    color       : blue;
+    font-size   : 1.8rem;
     margin-right: 2%;
 }

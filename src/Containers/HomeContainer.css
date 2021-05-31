@@ -1,36 +1,38 @@
-.white{
+.white {
     background-color: white;
 }
-.head{
-    color: blue;
-    font-size: 1.5rem;
-    margin-right: 0%;
-    padding-top: 2%;
+
+.head {
+    color        : blue;
+    font-size    : 1.5rem;
+    margin-right : 0%;
+    padding-top  : 2%;
     padding-right: 4%;
-    text-align: end;
-    width: 100vw;
-    height: 8vh;
+    text-align   : end;
+    width        : 100vw;
+    height       : 8vh;
 }
-.userInfo{
-    box-sizing: border-box;
-    height: 80vh;
+
+.userInfo {
+    box-sizing  : border-box;
+    height      : 80vh;
     margin-right: 2%;
 
-} 
-
-.filterUser{
-    margin-top: 2%;
-    height: 85vh;
 }
 
-.navOn{
+.filterUser {
+    margin-top: 2%;
+    height    : 85vh;
+}
+
+.navOn {
     width: 14.5%;
 }
 
-.navOff{
+.navOff {
     width: 5%;
 }
 
-body{
+body {
     background-color: aqua;
 }

@@ -1,100 +1,100 @@
-import {useState,useContext} from 'react';
+import { useState, useContext } from 'react';
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../Hooks/UserContext";
-import {projectFirestore as db} from '../firebase'
-export const useForm = (  ) => {
+import { projectFirestore as db } from '../firebase'
+export const useForm = () => {
     let history = useHistory();
-    const {currentUser, setcurrentUser} = useContext(UserContext);
-    const {activeSession, setactiveSession} = useContext(UserContext);
-    
+    const { currentUser, setcurrentUser } = useContext(UserContext);
+    const { activeSession, setactiveSession } = useContext(UserContext);
 
-    const [newUser, setnewUser] = useState(currentUser ? currentUser: {
-        nombres:"",
-        apellidos:"",
-        identificacion:"",
-        rol:"",
-        estado:"",
-        telefono:"",
-        correo:"",
-        password:""
+
+    const [newUser, setnewUser] = useState(currentUser ? currentUser : {
+        nombres: "",
+        apellidos: "",
+        identificacion: "",
+        rol: "",
+        estado: "",
+        telefono: "",
+        correo: "",
+        password: ""
     });
-    
-    const {dataSearch,setDataSearch} = useContext(UserContext);
-  
-    
-    const HandleSubmit  = (e) => {
+
+    const { dataSearch, setDataSearch } = useContext(UserContext);
+
+
+    const HandleSubmit = (e) => {
         e.preventDefault()
     }
 
-    const HandleReset = () =>{
+    const HandleReset = () => {
         setDataSearch({
-            nombres:"",
-            apellidos:"",
-            identificacion:"",
-            rol:"",
-            estado:"",
-            telefono:"",
-            correo:"",
-            password:""
+            nombres: "",
+            apellidos: "",
+            identificacion: "",
+            rol: "",
+            estado: "",
+            telefono: "",
+            correo: "",
+            password: ""
         })
     }
     const handleInputChange = ({ target }) => {
         setDataSearch({
-            ...dataSearch, 
-            [ target.name ]: target.value
+            ...dataSearch,
+            [target.name]: target.value
         });
     }
 
     const handleInputChangePost = ({ target }) => {
         setnewUser({
-            ...newUser, 
-            [ target.name ]: target.value
+            ...newUser,
+            [target.name]: target.value
         });
         console.log(newUser)
     }
-    
 
-    const PostNewUser = async (handleCLose)=>{
-        await db.collection("users").doc().set(newUser); 
-        handleCLose()     
-    } 
 
-    const EditUser= async(id,handleCLose)=>{
+    const PostNewUser = async (handleCLose) => {
+        await db.collection("users").doc().set(newUser);
+        handleCLose()
+    }
+
+    const EditUser = async (id, handleCLose) => {
         console.log(id)
         await db.collection("users").doc(id).update(newUser);
         setcurrentUser("");
         handleCLose()
-     }
-    
-     const loginUser = async ()=>{
-         const docs =[]
+    }
+
+    const loginUser = async () => {
+        const docs = []
         await db.collection("users").where("correo", "==", newUser.correo)
-        .get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                docs.push({ ...doc.data(), id: doc.id });
-                console.log(doc.data())
+            .get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    docs.push({ ...doc.data(), id: doc.id });
+                    console.log(doc.data())
+                });
+            })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
             });
-        })
-        .catch((error) => {
-            console.log("Error getting documents: ", error);
-        });
-        if( newUser.correo && docs[0]){
-            if (newUser.correo === docs[0].correo && newUser.password ===docs[0].password){
+        if (newUser.correo && docs[0]) {
+            if (newUser.correo === docs[0].correo && newUser.password === docs[0].password) {
                 setactiveSession(docs)
-                setTimeout(() => { (history.push("/app"))}, 2000); 
-               
+                setTimeout(() => { (history.push("/app")) }, 2000);
+
             }
-            else{
-                ( alert('credenciales incorrectas'))
+            else {
+                (alert('credenciales incorrectas'))
                 setactiveSession('')
             }
-         
-        } 
-        else{
-            ( alert('credenciales incorrectas'))
+
+        }
+        else {
+            (alert('credenciales incorrectas'))
             setactiveSession('')
         }
-  
-     }
-    return [handleInputChange,HandleSubmit,dataSearch,HandleReset,handleInputChangePost,newUser,PostNewUser,EditUser,loginUser];
+
+    }
+    return [handleInputChange, HandleSubmit, dataSearch, HandleReset, handleInputChangePost, newUser, PostNewUser, EditUser, loginUser];
 }

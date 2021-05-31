@@ -1,28 +1,29 @@
-.tableUser{
-    width: 80%;
-    margin-right:3%;
-    margin-left: 2%;
+.tableUser {
+    width       : 80%;
+    margin-right: 3%;
+    margin-left : 2%;
 }
-.titleBoard{
 
-    color: blue;
-    display: flex;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-top: 2%;
+.titleBoard {
+    color        : blue;
+    display      : flex;
+    font-size    : 1.5rem;
+    font-weight  : 700;
+    margin-top   : 2%;
     margin-bottom: 2%;
-    width: 100%;
-
+    width        : 100%;
 }
-.btnCreate{
+
+.btnCreate {
     margin-right: 18%;
-    margin-left: auto;
+    margin-left : auto;
 }
 
-.iconDelete{
-    font-size: 1.8rem;
+.iconDelete {
+    font-size   : 1.8rem;
     margin-right: 2%;
 }
-.iconDelete:hover{
+
+.iconDelete:hover {
     color: crimson;
 }

@@ -1,28 +1,29 @@
-.filter{
-    width: 11vw;
-    height: 80vh;
-    box-sizing: content-box;
-    border-left: solid 0.3px  blue;
+.filter {
+    width      : 11vw;
+    height     : 80vh;
+    box-sizing : content-box;
+    border-left: solid 0.3px blue;
 }
 
-.formFilter{
-     width: 100%;
-    font-size: 0.8rem;
-    height: 80%;
+.formFilter {
+    width       : 100%;
+    font-size   : 0.8rem;
+    height      : 80%;
     padding-left: 10%;
-   
+
 }
 
-.form-label{
+.form-label {
     margin-bottom: 0;
 }
-.iconFilter{
+
+.iconFilter {
     margin-right: 10%;
 }
 
-.tituloFiltro{
-    color: blue;
-    font-size: 1rem;
-    font-weight: 600;
+.tituloFiltro {
+    color        : blue;
+    font-size    : 1rem;
+    font-weight  : 600;
     margin-bottom: 10%;
 }
