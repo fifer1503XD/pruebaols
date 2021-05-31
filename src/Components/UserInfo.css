@@ -18,3 +18,11 @@
     margin-right: 18%;
     margin-left: auto;
 }
+
+.iconDelete{
+    font-size: 1.8rem;
+    margin-right: 2%;
+}
+.iconDelete:hover{
+    color: crimson;
+}

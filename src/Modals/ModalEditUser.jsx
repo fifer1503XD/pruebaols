@@ -25,7 +25,7 @@ const ModalEditUser = (props) => {
     }
     return ( 
         <>
-        <FontAwesomeIcon  onClick={()=>{editUser(userId)}}icon={faEdit}/> 
+        <FontAwesomeIcon className="iconModalEdit" onClick={()=>{editUser(userId)}}icon={faEdit}/> 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Editar usuario</Modal.Title>

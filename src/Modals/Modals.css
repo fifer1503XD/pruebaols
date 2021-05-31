@@ -24,3 +24,8 @@ modal-dialog{
     width: 45%;
     margin-left: 3%;
 }
+.iconModalEdit{
+    color: blue;
+    font-size: 1.8rem;
+    margin-right: 2%;
+}

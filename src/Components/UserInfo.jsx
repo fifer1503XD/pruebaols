@@ -12,7 +12,7 @@ const UserInfo = () => {
   
 
   const deleteUser = async (id) => {
-    if (window.confirm("are you sure you want to delete this link?")) {
+    if (window.confirm("Esta seguro de eliminar el usuario?")) {
       await db.collection("users").doc(id).delete();
     }
   };
@@ -76,7 +76,7 @@ const UserInfo = () => {
       <td>
           <div>
             <ModalEditUser userId={user.id}/>
-          <FontAwesomeIcon onClick={()=>{deleteUser(user.id)}} icon={faTrash}/>
+          <FontAwesomeIcon className={"iconDelete"} onClick={()=>{deleteUser(user.id)}} icon={faTrash}/>
           </div>
       </td>
       </tr>)
