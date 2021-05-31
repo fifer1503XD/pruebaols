@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext ,useState} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { UserContext } from "../Hooks/UserContext";
@@ -6,7 +6,10 @@ import './UserInfo.css'
 import ModalNewUser from "../Modals/ModalNewUser";
 import ModalEditUser from "../Modals/ModalEditUser";
 import { projectFirestore as db } from '../firebase'
+import Pagination from "./pagination";
 const UserInfo = () => {
+  const [filterUsers, setfilterUsers] = useState();
+  const { cant} = useContext(UserContext);
   const { dataUsers, setDataUsers } = useContext(UserContext);
   const { dataSearch } = useContext(UserContext);
 
@@ -17,18 +20,24 @@ const UserInfo = () => {
     }
   };
   const getUsers = async () => {
+    let superior 
+    { cant ?
+       ( superior = cant * 6): superior = 6}
+    const inferior = superior - 6
     db.collection("users").onSnapshot((querySnapshot) => {
       const docs = []
       querySnapshot.forEach(doc => {
         docs.push({ ...doc.data(), id: doc.id });
       });
-      setDataUsers(docs);
-
+      setfilterUsers(docs);
+      const datanew = docs.slice(inferior,superior);
+      setDataUsers(datanew);
     })
+    
   }
   useEffect(() => {
     getUsers()
-  }, []);
+  }, [cant]);
 
   return (
     <>
@@ -80,7 +89,9 @@ const UserInfo = () => {
               </tr>)
             })) : <div>Loading....</div>}
         </tbody>
+        <Pagination/>
       </table>
+      
     </>
   );
 }

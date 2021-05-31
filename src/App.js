@@ -8,6 +8,7 @@ import Login from './Components/login';
 
 
 function App() {
+  const [cant, setcant] = useState();
   const [sidebar, setsidebar] = useState(false);
   const [currentUser, setcurrentUser] = useState();
   const [dataUsers, setDataUsers] = useState([]);
@@ -24,7 +25,7 @@ function App() {
   return (
     
     
-    <UserContext.Provider value={{dataUsers,setDataUsers,dataSearch,setDataSearch,sidebar,setsidebar,currentUser, setcurrentUser,activeSession, setactiveSession}}>
+    <UserContext.Provider value={{dataUsers,setDataUsers,dataSearch,setDataSearch,sidebar,setsidebar,currentUser, setcurrentUser,activeSession, setactiveSession,cant, setcant}}>
           <Router>
             <Switch>
             <Route exact path="/" component ={Login}/>
