@@ -51,13 +51,16 @@ export const useForm = (  ) => {
     }
     
 
-    const PostNewUser = async ()=>{
-        await db.collection("users").doc().set(newUser);       
+    const PostNewUser = async (handleCLose)=>{
+        await db.collection("users").doc().set(newUser); 
+        handleCLose()     
     } 
-    const EditUser= async(id)=>{
+
+    const EditUser= async(id,handleCLose)=>{
         console.log(id)
         await db.collection("users").doc(id).update(newUser);
         setcurrentUser("");
+        handleCLose()
      }
     
      const loginUser = async ()=>{

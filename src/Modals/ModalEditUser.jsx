@@ -18,7 +18,6 @@ const ModalEditUser = (props) => {
     const { setcurrentUser} = useContext(UserContext);
 
     const editUser = async (id) => {
-      console.log('ingresa')
       const doc = await db.collection("users").doc(id).get();
       setcurrentUser({ ...doc.data() });
       setShow(true)

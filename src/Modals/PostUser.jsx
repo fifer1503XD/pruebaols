@@ -54,7 +54,7 @@ const PostUser = (props) => {
                 <input name="password" type="password" className="form-control" id="password" value={ password}onChange={ handleInputChangePost }/>
             </div>
             <div className="btnNewUser">
-            <button onClick ={currentUser ? ()=> EditUser(userId)  :()=>PostNewUser()} className="btn btn-success btnAceptar">Aceptar</button>
+            <button onClick ={currentUser ? ()=> EditUser(userId,handleClose)  :()=>PostNewUser(handleClose)} className="btn btn-success btnAceptar">Aceptar</button>
             <button onClick ={()=>handleClose()} className="btn btn-success btnAceptar"> Cerrar </button>
             </div>
             

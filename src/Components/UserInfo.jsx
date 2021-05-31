@@ -28,7 +28,7 @@ const UserInfo = () => {
   }
   useEffect(() => {
    getUsers()
-  }, [dataUsers]);
+  }, []);
  
   
  
