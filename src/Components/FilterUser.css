@@ -1,0 +1,13 @@
+.formFilter{
+    font-size: 0.8rem;
+    height: 80%;
+     padding: 5%;
+   
+}
+.filter{
+    height: 80vh;
+    box-sizing: content-box;
+}
+.form-label{
+    margin-bottom: 0;
+}

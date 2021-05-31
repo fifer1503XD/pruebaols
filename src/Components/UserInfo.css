@@ -1,0 +1,10 @@
+.tableUser{
+    width: 95%
+}
+.titleBoard{
+    display: flex;
+    width: 100%;
+}
+.btnCreate{
+    margin-left: auto;
+}

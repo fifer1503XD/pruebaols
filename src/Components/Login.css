@@ -1,0 +1,44 @@
+body{
+    background-color: white;
+}
+.effectCircle{
+    clip-path: circle(62.9% at 45% 5%);
+    margin-left: -3%;
+}
+
+
+
+input, textarea { 
+	font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+
+.LoginForm{
+    width: 25vw;
+    justify-content: center;
+    text-align: center;
+    padding:2%;
+    background-color: white;
+    position: absolute;
+    top: 300px; left: 60%;
+    box-shadow: 10px 8px 30px 4px rgb(53 52 52);
+    border-radius: 15px;
+}
+
+.inputForm{
+    height: 6vh;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+.imgLogin{
+   
+}
+
+.tituloFormLogin{
+    font-weight: 1200;
+    font-size: 2rem;
+}
+.btnForm{
+    width: 100%;
+}

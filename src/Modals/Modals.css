@@ -1,0 +1,26 @@
+.btnNewUser{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+.btnAceptar{
+   margin: 2%;
+}
+.formPostUser{
+    display: flex;
+    flex-wrap: wrap;  
+}
+
+.modalEdit{
+    width: 100%;
+}
+modal-dialog{
+    width: 55vw;
+}
+
+.inputForm2{
+    height: 12vh;
+    width: 45%;
+    margin-left: 3%;
+}

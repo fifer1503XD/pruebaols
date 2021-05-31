@@ -1,24 +1,39 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React,{useState} from 'react'
+import HomeContainer from './Containers/HomeContainer';
+import { UserContext} from './Hooks/UserContext';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Login from './Components/login';
+
 
 function App() {
+  const [sidebar, setsidebar] = useState(false);
+  const [currentUser, setcurrentUser] = useState();
+  const [dataUsers, setDataUsers] = useState([]);
+  const [activeSession, setactiveSession] = useState();
+  const [dataSearch, setDataSearch] = useState(   {
+    nombres:"",
+    apellidos:"",
+    identificacion:"",
+    rol:"",
+    estado:"",
+    telefono:"",
+    correo:""
+});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    
+    <UserContext.Provider value={{dataUsers,setDataUsers,dataSearch,setDataSearch,sidebar,setsidebar,currentUser, setcurrentUser,activeSession, setactiveSession}}>
+          <Router>
+            <Switch>
+            <Route exact path="/" component ={Login}/>
+            <Route exact path="/app" component={HomeContainer}/>
+            </Switch>
+        </Router>
+    </UserContext.Provider>
+     
+   
   );
 }
 
