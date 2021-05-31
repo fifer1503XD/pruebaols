@@ -35,7 +35,6 @@ const UserInfo = () => {
     return ( 
       <>
       <div className="Head">
-      <span>Usuarios existentes</span> 
       </div>
       <div className="titleBoard">
       <span>Usuarios existentes</span> 

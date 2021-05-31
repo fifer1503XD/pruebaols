@@ -1,10 +1,20 @@
 .tableUser{
-    width: 95%
+    width: 80%;
+    margin-right:3%;
+    margin-left: 2%;
 }
 .titleBoard{
+
+    color: blue;
     display: flex;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2%;
+    margin-bottom: 2%;
     width: 100%;
+
 }
 .btnCreate{
+    margin-right: 18%;
     margin-left: auto;
 }

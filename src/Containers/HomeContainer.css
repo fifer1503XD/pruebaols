@@ -1,7 +1,11 @@
 .white{
     background-color: white;
 }
-
+.head{
+    width: 100vw;
+    height: 10vh;
+    background-color: brown;
+}
 .userInfo{
     box-sizing: border-box;
     margin-top: 2%;
@@ -23,4 +27,6 @@
     width: 5%;
 }
 
-
+body{
+    background-color: aqua;
+}
