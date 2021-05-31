@@ -5,6 +5,9 @@ import {projectFirestore as db} from '../firebase'
 export const useForm = (  ) => {
     let history = useHistory();
     const {currentUser, setcurrentUser} = useContext(UserContext);
+    const {activeSession, setactiveSession} = useContext(UserContext);
+    
+
     const [newUser, setnewUser] = useState(currentUser ? currentUser: {
         nombres:"",
         apellidos:"",
@@ -77,19 +80,19 @@ export const useForm = (  ) => {
         });
         if( newUser.correo && docs[0]){
             if (newUser.correo === docs[0].correo && newUser.password ===docs[0].password){
-                setcurrentUser(docs)
+                setactiveSession(docs)
                 setTimeout(() => { (history.push("/app"))}, 2000); 
                
             }
             else{
                 ( alert('credenciales incorrectas'))
-                setcurrentUser('')
+                setactiveSession('')
             }
          
         } 
         else{
             ( alert('credenciales incorrectas'))
-            setcurrentUser('')
+            setactiveSession('')
         }
   
      }

@@ -8,7 +8,7 @@ import {faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import './HomeContainer.css'
 
 const HomeContainer = () => {
-    const {currentUser, setcurrentUser } = useContext(UserContext);
+    const {activeSession, setactiveSession } = useContext(UserContext);
     const {sidebar} = useContext(UserContext);
 
     return (
@@ -19,7 +19,7 @@ const HomeContainer = () => {
             </div>
             <div className={sidebar ? 'userInfo col-md-10 col-sm-12 white d-flex flex-wrap' : 'userInfo col-md-11 col-sm-12 white d-flex flex-wrap'}>
             <div className="head">
-            {currentUser ? <span> <FontAwesomeIcon icon={faUserCircle}/> {currentUser[0].nombres}</span> : 'Debes iniciar sesion'}
+            {activeSession ? <span> <FontAwesomeIcon icon={faUserCircle}/> {activeSession[0].nombres}</span> : 'Debes iniciar sesion'}
             <hr />
             </div>
             <UserInfo/>
